@@ -1,0 +1,13 @@
+
+.app { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; background: #f7f7f8; }
+.sidebar { background: #111827; color: #fff; padding: 16px; }
+.menu { display: flex; flex-direction: column; gap: 8px; }
+.menu-item { text-align: left; padding: 10px 12px; border: none; border-radius: 6px; background: transparent; color: inherit; cursor: pointer; }
+.menu-item:hover { background: #1f2937; }
+.menu-item.active { background: #2563eb; }
+.content { padding: 24px; }
+.panel { background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 16px; }
+.fade-enter { opacity: 0; }
+.fade-enter-active { opacity: 1; transition: opacity 240ms ease; }
+.fade-exit { opacity: 1; }
+.fade-exit-active { opacity: 0; transition: opacity 200ms ease; }
