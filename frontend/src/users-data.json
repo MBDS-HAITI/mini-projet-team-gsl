@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": "user_37ahmyZMcRUMnoBMTjZiLZ8GDRn",
+            "firstName": "Louis",
+            "lastName": "Midson Lajeanty",
+            "username": "midsonlajeanty",
+            "email": "louismidsonlajeanty@gmail.com",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ2l0aHViL2ltZ18zN2FobXR2ZkxrSnd6aTFSbFZpb1RQYnBTRjEifQ",
+            "createdAt": 1767147251850,
+            "updatedAt": 1767841317570,
+            "lastSignInAt": 1767841317537
+        }
+    ],
+    "totalCount": 1
+}
