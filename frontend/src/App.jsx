@@ -13,3 +13,21 @@ export default function App() {
     </>
   );
 }
+
+<Routes>
+  <Route path="/login" element={<Login />} />
+  
+  {/* Route accessible par tout utilisateur connecté */}
+  <Route path="/dashboard" element={
+    <ProtectedRoute>
+      <DashboardSelector /> 
+    </ProtectedRoute>
+  } />
+
+  {/* Route réservée aux Admins */}
+  <Route path="/admin/all-students" element={
+    <ProtectedRoute roleRequired="admin">
+      <AdminPanel />
+    </ProtectedRoute>
+  } />
+</Routes>
