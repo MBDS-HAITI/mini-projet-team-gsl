@@ -11,8 +11,8 @@ function Students() {
   const canEdit = userRole === 'administrateur' || userRole === 'scolarite';
 
   const [students, setStudents] = useState([]);
-  const [filteredStudents, setFilteredStudents] = useState([]); // ← AJOUTER
-  const [searchQuery, setSearchQuery] = useState(''); // ← AJOUTER
+  const [filteredStudents, setFilteredStudents] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
@@ -24,7 +24,7 @@ function Students() {
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 8;
 
   useEffect(() => {
     loadStudents();
@@ -52,11 +52,11 @@ function Students() {
       setLoading(true);
       const response = await studentAPI.getAll();
       setStudents(response.data || []);
-      setFilteredStudents(response.data || []); // ← AJOUTER
+      setFilteredStudents(response.data || []);
     } catch (error) {
       console.error('Erreur chargement étudiants:', error);
       setStudents([]);
-      setFilteredStudents([]); // ← AJOUTER
+      setFilteredStudents([]);
     } finally {
       setLoading(false);
     }

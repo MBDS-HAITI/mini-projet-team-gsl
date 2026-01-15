@@ -12,6 +12,7 @@ import {
   BarChart, Bar,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+import ThemeToggle from '../components/ThemeToggle';
 
 function StudentDashboard() {
   const navigate = useNavigate();
@@ -154,6 +155,7 @@ const loadStudentData = async () => {
               </p>
             </div>
             <div className="flex items-center gap-4">
+              <ThemeToggle />
               <button
                 onClick={() => setShowChangePassword(true)}
                 className="btn-secondary flex items-center gap-2"
