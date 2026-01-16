@@ -116,7 +116,7 @@ function ContactAdmin() {
 
         <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
           <p className="text-sm text-blue-800 dark:text-blue-200">
-            💡 <strong>Conseil :</strong> Soyez le plus précis possible dans votre message pour obtenir une réponse rapide.
+            <strong>Conseil :</strong> Soyez le plus précis possible dans votre message pour obtenir une réponse rapide.
           </p>
         </div>
       </div>
@@ -126,9 +126,9 @@ function ContactAdmin() {
           Informations de contact
         </h3>
         <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-          <p>📧 Email : admin@student-app.com</p>
-          <p>📞 Téléphone : +509 1234 5678</p>
-          <p>🕐 Horaires : Lundi - Vendredi, 8h - 17h</p>
+          <p>Email : admin@student-app.com</p>
+          <p>Téléphone : +509 1234 5678</p>
+          <p>Horaires : Lundi - Vendredi, 8h - 17h</p>
         </div>
       </div>
     </div>

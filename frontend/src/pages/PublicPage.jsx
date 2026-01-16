@@ -32,7 +32,6 @@ function PublicPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="/" className="btn-primary text-lg px-8 py-4">login</a>
               <button
                 onClick={() => navigate('/student-login')}
                 className="btn-primary text-lg px-8 py-4 flex items-center gap-2"

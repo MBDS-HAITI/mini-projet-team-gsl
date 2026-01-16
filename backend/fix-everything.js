@@ -6,14 +6,14 @@ const crypto = require('crypto');
 async function fixEverything() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('✅ Connecté à MongoDB\n');
+    console.log('Connecté à MongoDB\n');
 
     // 1. Supprimer TOUS les étudiants
     const deletedStudents = await Student.deleteMany({});
     console.log(`🗑️  ${deletedStudents.deletedCount} ancien(s) étudiant(s) supprimé(s)`);
 
     // 2. Créer 5 nouveaux étudiants avec mot de passe
-    console.log('\n📝 Création de 5 étudiants...\n');
+    console.log('\nCréation de 5 étudiants...\n');
     
     const studentsData = [
       { firstName: 'Jean', lastName: 'Dupont', email: 'jean.dupont@test.com' },
@@ -36,7 +36,7 @@ async function fixEverything() {
       await student.save();
       createdStudents.push(student);
       
-      console.log(`✅ ${student.firstName} ${student.lastName}`);
+      console.log(`${student.firstName} ${student.lastName}`);
       console.log(`   Email: ${student.email}`);
       console.log(`   Numéro: ${student.studentNumber}`);
       console.log(`   Mot de passe: ${tempPassword}\n`);
@@ -46,7 +46,7 @@ async function fixEverything() {
     let coursesCount = await Course.countDocuments();
     
     if (coursesCount === 0) {
-      console.log('📚 Création de cours...\n');
+      console.log(' Création de cours...\n');
       
       const courses = await Course.insertMany([
         { name: 'Mathématiques', code: 'MATH101', description: 'Algèbre et calcul', credits: 4 },
@@ -56,10 +56,10 @@ async function fixEverything() {
         { name: 'Français', code: 'FRAN101', description: 'Littérature française', credits: 3 },
       ]);
       
-      console.log(`✅ ${courses.length} cours créés`);
+      console.log(` ${courses.length} cours créés`);
 
       // 4. Créer des notes pour chaque étudiant
-      console.log('\n📊 Création de notes...\n');
+      console.log('\nCréation de notes...\n');
       
       for (const student of createdStudents) {
         for (const course of courses.slice(0, 3)) {
@@ -70,7 +70,7 @@ async function fixEverything() {
           });
           await grade.save();
         }
-        console.log(`✅ 3 notes créées pour ${student.firstName}`);
+        console.log(`3 notes créées pour ${student.firstName}`);
       }
     }
 
@@ -79,14 +79,14 @@ async function fixEverything() {
     console.log('Cours:', await Course.countDocuments());
     console.log('Notes:', await Grade.countDocuments());
     
-    console.log('\n✅ Tout est prêt !\n');
-    console.log('🔑 Utilisez ces identifiants pour tester:');
+    console.log('\nTout est prêt !\n');
+    console.log(' Utilisez ces identifiants pour tester:');
     console.log('   Email: jean.dupont@test.com');
-    console.log('   Voir le mot de passe ci-dessus ⬆️\n');
+    console.log('   Voir le mot de passe ci-dessus \n');
 
     process.exit(0);
   } catch (error) {
-    console.error('❌ Erreur:', error);
+    console.error('Erreur:', error);
     process.exit(1);
   }
 }

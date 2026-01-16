@@ -7,7 +7,7 @@ const crypto = require('crypto');
 async function testCreateStudent() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('✅ Connecté à MongoDB\n');
+    console.log('Connecté à MongoDB\n');
 
     // Générer un mot de passe temporaire
     const tempPassword = crypto.randomBytes(8).toString('hex');
@@ -21,7 +21,7 @@ const student = new Student({
 
     await student.save();
 
-    console.log('✅ Étudiant créé:');
+    console.log(' Étudiant créé:');
     console.log('   Numéro:', student.studentNumber);
     console.log('   Email:', student.email);
     console.log('   Mot de passe:', tempPassword);
@@ -34,10 +34,10 @@ const student = new Student({
       tempPassword,
     });
 
-    console.log('\n📧 Email envoyé !');
+    console.log('\n Email envoyé !');
     process.exit(0);
   } catch (error) {
-    console.error('❌ Erreur:', error);
+    console.error('Erreur:', error);
     process.exit(1);
   }
 }

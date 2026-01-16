@@ -3,7 +3,7 @@ import { useUser } from '@clerk/clerk-react';
 import { studentAPI } from '../services/api';
 import { PlusIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 import Pagination from '../components/Pagination';
-import SearchBar from '../components/SearchBar'; // ← AJOUTER
+import SearchBar from '../components/SearchBar';
 
 function Students() {
   const { user } = useUser();
@@ -30,7 +30,7 @@ function Students() {
     loadStudents();
   }, []);
 
-  // ← AJOUTER : Filtrage en temps réel
+  //Filtrage en temps réel
   useEffect(() => {
     if (searchQuery.trim() === '') {
       setFilteredStudents(students);
@@ -72,9 +72,9 @@ function Students() {
         const response = await studentAPI.create(formData);
         if (response.data.tempPassword) {
           alert(
-            `✅ Étudiant créé avec succès !\n\n` +
-            `📧 Email envoyé à : ${formData.email}\n\n` +
-            `🔑 Mot de passe temporaire :\n${response.data.tempPassword}\n\n` +
+            `Étudiant créé avec succès !\n\n` +
+            `Email envoyé à : ${formData.email}\n\n` +
+            `Mot de passe temporaire :\n${response.data.tempPassword}\n\n` +
             `L'étudiant doit utiliser ces identifiants pour sa première connexion.`
           );
         }
@@ -110,7 +110,7 @@ function Students() {
     }
   };
 
-  // ← MODIFIER : Utiliser filteredStudents au lieu de students
+  //Utiliser filteredStudents au lieu de students
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredStudents.slice(indexOfFirstItem, indexOfLastItem);

@@ -200,7 +200,7 @@ function Dashboard() {
           Tableau de bord
         </h1>
         <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          Bienvenue, {user?.firstName} {user?.lastName} 👋
+          Bienvenue, {user?.firstName} {user?.lastName}
         </p>
       </div>
 
@@ -292,7 +292,7 @@ function Dashboard() {
         {/* Répartition des notes (Pie Chart) */}
         <div className="card dark:bg-gray-800">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            📊 Répartition des notes
+            Répartition des notes
           </h3>
           {gradeDistribution.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
@@ -332,7 +332,7 @@ function Dashboard() {
         {/* Évolution des notes (Line Chart) */}
         <div className="card dark:bg-gray-800">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            📈 Évolution des dernières notes
+            Évolution des dernières notes
           </h3>
           {last10Grades.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
@@ -380,7 +380,7 @@ function Dashboard() {
         {/* Moyennes par cours (Bar Chart) */}
         <div className="card dark:bg-gray-800">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            🎯 Moyennes par cours
+            Moyennes par cours
           </h3>
           {averageGradesByCourse.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>
@@ -428,7 +428,7 @@ function Dashboard() {
         {/* Performance Radar */}
         <div className="card dark:bg-gray-800">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            🎪 Répartition des performances
+            Répartition des performances
           </h3>
           {performanceRadar.length > 0 ? (
             <ResponsiveContainer width="100%" height={300}>

@@ -5,7 +5,7 @@ const { User, Student } = require('./model');
 async function migrateUsers() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('✅ Connecté à MongoDB');
+    console.log(' Connecté à MongoDB');
 
     // Trouver tous les utilisateurs qui n'ont pas de studentId
     const usersWithoutStudent = await User.find({ 
@@ -13,7 +13,7 @@ async function migrateUsers() {
       role: { $in: ['etudiant1', 'etudiant2', 'etudiant3'] }
     });
 
-    console.log(`📋 ${usersWithoutStudent.length} utilisateur(s) sans profil étudiant`);
+    console.log(`${usersWithoutStudent.length} utilisateur(s) sans profil étudiant`);
 
     for (const user of usersWithoutStudent) {
       // Créer un profil étudiant
@@ -28,13 +28,13 @@ async function migrateUsers() {
       user.studentId = newStudent._id;
       await user.save();
 
-      console.log(`✅ Profil étudiant créé pour: ${user.email}`);
+      console.log(`Profil étudiant créé pour: ${user.email}`);
     }
 
-    console.log('🎉 Migration terminée !');
+    console.log('Migration terminée !');
     process.exit(0);
   } catch (error) {
-    console.error('❌ Erreur:', error);
+    console.error('Erreur:', error);
     process.exit(1);
   }
 }

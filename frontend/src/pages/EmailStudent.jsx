@@ -146,7 +146,7 @@ function EmailStudent() {
       {/* Informations supplémentaires */}
       <div className="card dark:bg-gray-800">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-          📋 Avant d'envoyer votre message
+          Avant d'envoyer votre message
         </h3>
         <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
           <li className="flex items-start">

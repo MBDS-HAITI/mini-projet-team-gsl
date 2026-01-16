@@ -29,10 +29,10 @@ const options = {};
 
 mongoose.connect(uri, options)
     .then(() => {
-        console.log("✅ Connexion à la base MongoDB OK");
+        console.log("Connexion à la base MongoDB OK");
     },
     err => {
-        console.log('❌ Erreur de connexion MongoDB: ', err);
+        console.log('Erreur de connexion MongoDB: ', err);
     });
 
 // Configuration CORS
@@ -68,7 +68,7 @@ const authenticateStudent = async (req, res, next) => {
     const token = req.headers.authorization?.replace('Bearer ', '');
     
     if (!token) {
-      console.log('❌ Token manquant');
+      console.log('Token manquant');
       return res.status(401).json({ error: 'Token manquant' });
     }
 
@@ -76,14 +76,14 @@ const authenticateStudent = async (req, res, next) => {
     const student = await Student.findById(decoded.studentId);
 
     if (!student || !student.isActive) {
-      console.log('❌ Token invalide ou compte désactivé');
+      console.log('Token invalide ou compte désactivé');
       return res.status(401).json({ error: 'Token invalide ou compte désactivé' });
     }
 
     req.student = student;
     next();
   } catch (error) {
-    console.error('❌ Erreur auth JWT:', error.message);
+    console.error(' Erreur auth JWT:', error.message);
     return res.status(401).json({ error: 'Non authentifié' });
   }
 };
@@ -302,13 +302,13 @@ app.get(prefix + '/emails/students-list',
 
 // Gestion des erreurs 404
 app.use((req, res) => {
-    console.log('❌ Route non trouvée:', req.method, req.originalUrl);
+    console.log('Route non trouvée:', req.method, req.originalUrl);
     res.status(404).json({ error: 'Route non trouvée' });
 });
 
 // Gestion des erreurs globales
 app.use((err, req, res, next) => {
-    console.error('❌ Erreur serveur:', err);
+    console.error('Erreur serveur:', err);
     res.status(err.status || 500).json({
         error: err.message || 'Erreur serveur interne'
     });
@@ -318,9 +318,9 @@ app.use((err, req, res, next) => {
 // DÉMARRAGE DU SERVEUR
 // ========================================
 app.listen(port, "0.0.0.0", () => {
-    console.log(`🚀 Serveur démarré sur http://localhost:${port}`);
-    console.log(`📚 API disponible sur http://localhost:${port}${prefix}`);
-    console.log(`🔐 JWT_SECRET configuré: ${!!process.env.JWT_SECRET}`);
+    console.log(`Serveur démarré sur http://localhost:${port}`);
+    console.log(`API disponible sur http://localhost:${port}${prefix}`);
+    console.log(`JWT_SECRET configuré: ${!!process.env.JWT_SECRET}`);
 });
 
 module.exports = app;
