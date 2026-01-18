@@ -69,7 +69,7 @@ function About() {
           Notre Mission
         </h2>
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-          Ce travail a été donné dans le cadre du cours de développement web dirigé par le professeur Édouard Amos.
+          Ce travail a été donné dans le cadre du cours de développement web dirigé par le professeur Édouard AMOSSE.
           Il s'agit de la version finale d'une suite de TP dont l'objectif est de créer une application de Student Management
           pour simplifier la gestion académique et offrir une expérience utilisateur exceptionnelle aux administrateurs et aux étudiants.
           Notre objectif est de fournir un outil puissant, intuitif et accessible qui facilite le suivi des performances académiques et

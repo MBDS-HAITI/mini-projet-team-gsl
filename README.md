@@ -20,7 +20,7 @@
 
 
 À propos
-Student Management System est une application web full-stack moderne conçue dans le cadre d'une suite de TP du cours de devellopement web par le professeur AMOS Edouard base sur la gestion académique dans les établissements d'enseignement. Elle offre une interface intuitive pour la gestion des étudiants, des cours, des notes et des communications, avec un système d'authentification dual (OAuth + JWT) et des fonctionnalités avancées de reporting.
+Student Management System est une application web full-stack moderne conçue dans le cadre d'une suite de TP du cours de devellopement web par le professeur AMOSSE Edouard base sur la gestion académique dans les établissements d'enseignement. Elle offre une interface intuitive pour la gestion des étudiants, des cours, des notes et des communications, avec un système d'authentification dual (OAuth + JWT) et des fonctionnalités avancées de reporting.
 
 Pourquoi ce projet ?
 
@@ -604,4 +604,8 @@ Email : gsl.mbds@gmail.com
 
 
 ## Remerciements
-remerciment speciale au professeur EDOUARD Amos.
+remerciment speciale au professeur AMOSSE Edouard.
+
+
+*******lien Drive du video de la presentation********
+https://drive.google.com/file/d/1dXHU3ZKXd89mZnCuFSfYtHSNPScSy6Co/view?usp=share_link
